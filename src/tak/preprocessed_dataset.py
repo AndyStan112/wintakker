@@ -6,46 +6,20 @@ from torch.utils.data import Dataset
 
 
 class PreprocessedDataset(Dataset):
-    """Map-style dataset backed by sharded numpy memmaps produced by the
-    preprocessing script.
-
-    meta.json format:
-      {
-        'total_samples': N,
-        'dtype': 'float16'|'float32',
-        'shape': [10,8,8],
-        'shards': [ { 'X': 'X_0.dat', 'Y': 'Y_0.dat', 'G': ..., 'GI': ..., 'size': n0 }, ... ]
-      }
-    """
-
     def __init__(self, preproc_dir):
-        meta_path = os.path.join(preproc_dir, "meta.json")
-        with open(meta_path, "r") as f:
-            self.meta = json.load(f)
-        self.shards = self.meta["shards"]
+        self.preproc_dir = preproc_dir
 
-        self.X_maps = []
-        self.Y_maps = []
-        self.G_maps = []
-        self.GI_maps = []
-        for s in self.shards:
-            self.X_maps.append(
-                np.memmap(
-                    s["X"],
-                    dtype=np.float16 if self.meta["dtype"] == "float16" else np.float32,
-                    mode="r",
-                    shape=(s["size"], 10, 8, 8),
-                )
-            )
-            self.Y_maps.append(
-                np.memmap(s["Y"], dtype=np.float32, mode="r", shape=(s["size"],))
-            )
-            self.G_maps.append(
-                np.memmap(s["G"], dtype=np.int32, mode="r", shape=(s["size"],))
-            )
-            self.GI_maps.append(
-                np.memmap(s["GI"], dtype=np.int16, mode="r", shape=(s["size"],))
-            )
+        with open(os.path.join(preproc_dir, "meta.json"), "r") as f:
+            self.meta = json.load(f)
+
+        self.shards = self.meta["shards"]
+        self.dtype = np.float32 if self.meta["dtype"] == "float32" else np.float16
+
+        self._current_shard_idx = None
+        self.X_map = None
+        self.Y_map = None
+        self.G_map = None
+        self.GI_map = None
 
         self.cum = [0]
         for s in self.shards:
@@ -55,22 +29,68 @@ class PreprocessedDataset(Dataset):
     def __len__(self):
         return self.total
 
-    def _loc(self, idx):
+    def _resolve(self, name):
+        return os.path.join(self.preproc_dir, os.path.basename(name))
 
+    def _load_shard(self, shard_idx):
+        if self._current_shard_idx == shard_idx:
+            return
+
+        s = self.shards[shard_idx]
+        size = int(s["size"])
+
+        self.X_map = np.memmap(
+            self._resolve(s["X"]),
+            dtype=self.dtype,
+            mode="r",
+            shape=(size, 10, 8, 8),
+        )
+
+        self.Y_map = np.memmap(
+            self._resolve(s["Y"]),
+            dtype=np.float32,
+            mode="r",
+            shape=(size,),
+        )
+
+        self.G_map = np.memmap(
+            self._resolve(s["G"]),
+            dtype=np.int32,
+            mode="r",
+            shape=(size,),
+        )
+
+        self.GI_map = np.memmap(
+            self._resolve(s["GI"]),
+            dtype=np.int16,
+            mode="r",
+            shape=(size,),
+        )
+
+        self._current_shard_idx = shard_idx
+
+    def _loc(self, idx):
         for si in range(len(self.shards)):
             if idx < self.cum[si + 1]:
-                local = idx - self.cum[si]
-                return si, int(local)
+                return si, idx - self.cum[si]
         raise IndexError(idx)
 
     def __getitem__(self, idx):
         si, local = self._loc(int(idx))
-        x = self.X_maps[si][local]
-        y = self.Y_maps[si][local]
-        gid = int(self.G_maps[si][local])
-        gidx = int(self.GI_maps[si][local])
-        xt = torch.from_numpy(np.array(x)).to(dtype=torch.float32)
-        yt = torch.tensor([float(y)], dtype=torch.float32)
+        self._load_shard(si)
+
+        # numpy memmap slices
+        x_np = self.X_map[local]     # shape: (10, 8, 8)
+        y_val = float(self.Y_map[local])
+        gid = int(self.G_map[local])
+        gidx = int(self.GI_map[local])
+
+        # Convert safely to torch tensor (2.5 KB copy, super fast)
+        xt = torch.tensor(x_np, dtype=torch.float32)
+
+        # Keep y as (1,) so collate produces (B,1)
+        yt = torch.tensor([y_val], dtype=torch.float32)
+
         return (
             xt,
             yt,

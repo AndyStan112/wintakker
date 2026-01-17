@@ -1,0 +1,69 @@
+{
+  "total_samples": 16786925,
+  "dtype": "float16",
+  "shape": [
+    10,
+    8,
+    8
+  ],
+  "samples_per_game": 24,
+  "seed": 0,
+  "shards": [
+    {
+      "X": "preproc/X_0.dat",
+      "Y": "preproc/Y_0.dat",
+      "G": "preproc/GID_0.dat",
+      "GI": "preproc/GIDX_0.dat",
+      "size": 2098366
+    },
+    {
+      "X": "preproc/X_1.dat",
+      "Y": "preproc/Y_1.dat",
+      "G": "preproc/GID_1.dat",
+      "GI": "preproc/GIDX_1.dat",
+      "size": 2098366
+    },
+    {
+      "X": "preproc/X_2.dat",
+      "Y": "preproc/Y_2.dat",
+      "G": "preproc/GID_2.dat",
+      "GI": "preproc/GIDX_2.dat",
+      "size": 2098366
+    },
+    {
+      "X": "preproc/X_3.dat",
+      "Y": "preproc/Y_3.dat",
+      "G": "preproc/GID_3.dat",
+      "GI": "preproc/GIDX_3.dat",
+      "size": 2098366
+    },
+    {
+      "X": "preproc/X_4.dat",
+      "Y": "preproc/Y_4.dat",
+      "G": "preproc/GID_4.dat",
+      "GI": "preproc/GIDX_4.dat",
+      "size": 2098366
+    },
+    {
+      "X": "preproc/X_5.dat",
+      "Y": "preproc/Y_5.dat",
+      "G": "preproc/GID_5.dat",
+      "GI": "preproc/GIDX_5.dat",
+      "size": 2098365
+    },
+    {
+      "X": "preproc/X_6.dat",
+      "Y": "preproc/Y_6.dat",
+      "G": "preproc/GID_6.dat",
+      "GI": "preproc/GIDX_6.dat",
+      "size": 2098365
+    },
+    {
+      "X": "preproc/X_7.dat",
+      "Y": "preproc/Y_7.dat",
+      "G": "preproc/GID_7.dat",
+      "GI": "preproc/GIDX_7.dat",
+      "size": 2098365
+    }
+  ]
+}

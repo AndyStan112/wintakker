@@ -7,6 +7,17 @@ import json
 import torch
 from torch.utils.data import DataLoader, Subset
 from tak.preprocessed_dataset import PreprocessedDataset
+torch.set_num_threads(1)
+
+def collate_fn(batch):
+    xb, yb, gidb, gidxb = zip(*batch)
+    return (
+        torch.stack(xb),
+        torch.stack(yb),
+        torch.stack(gidb),
+        torch.stack(gidxb),
+    )
+
 
 try:
     from tak.preprocessed_dataset import PreprocessedDataset
@@ -140,7 +151,12 @@ def main():
             print(f"resume checkpoint not found: {args.resume}; starting fresh")
 
     if args.num_workers <= 0:
-        args.num_workers = max(1, multiprocessing.cpu_count() - 1)
+
+        if sys.platform == "win32" and torch.cuda.is_available():
+            print("Windows with GPU detected; using 0 data loader workers")
+            args.num_workers = 0
+        else:
+            args.num_workers = max(1, multiprocessing.cpu_count() - 1)
 
     print(f"loading preprocessed dataset from {args.preprocessed_dir}")
     ds = PreprocessedDataset(args.preprocessed_dir)
@@ -163,6 +179,7 @@ def main():
         pin_memory=torch.cuda.is_available(),
         persistent_workers=(args.num_workers > 0),
         prefetch_factor=4,
+        collate_fn=collate_fn,
     )
 
     stop_requested = {"flag": False}
@@ -189,7 +206,7 @@ def main():
             pbar = tqdm(
                 dl,
                 desc=f"Epoch {epoch}/{args.epochs}",
-                unit="batch",
+                unit="batches",
                 total=total_batches,
             )
 
@@ -232,7 +249,7 @@ def main():
 
                 if i % 10 == 0:
                     running = total / max(n, 1)
-                    pbar.set_postfix(loss=f"{running:.6f}")
+                    pbar.set_postfix(loss=f"{running:.6f}",sample_rate=f"{i*args.batch/(time.time()-pbar.start_t):.1f} samples/s")
 
                 if stop_requested["flag"]:
                     pbar.close()

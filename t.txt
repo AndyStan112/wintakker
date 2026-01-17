@@ -1,0 +1,9 @@
+uv run train-ml \
+  --preprocessed-dir preproc \
+  --epochs 1 \
+  --batch 16 \
+  --num-workers 3 \
+  --checkpoint final.ckpt \
+  --out final.pt \
+  --checkpoint-interval 1 \
+  --amp
