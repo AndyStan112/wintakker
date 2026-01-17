@@ -1,0 +1,22 @@
+[project]
+name = "tak"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "AndyStan112", email = "stanica.andrei28@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.3.5",
+    "torch>=2.9.1",
+    "tqdm>=4.67.1",
+]
+
+[project.scripts]
+tak-cli = "tak.cli:main"
+train-ml = "tak.train_ml:main"
+
+[build-system]
+requires = ["uv_build>=0.8.22,<0.9.0"]
+build-backend = "uv_build"

@@ -1,0 +1,11 @@
+{
+  "tempo": 5,
+  "top_flat": 40,
+  "standing": 20,
+  "capstone": 30,
+  "center": 4,
+  "stack_captive": 5,
+  "cap_mobility": 1,
+  "road_potential": 10,
+  "flat_control": 3
+}
