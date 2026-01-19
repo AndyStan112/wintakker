@@ -1,0 +1,236 @@
+┌[andy:andy(~/repos/p)]
+└$ uv run tak-cli --depth 2
+      Built tak @ file:///home/andy/repos/p
+Uninstalled 1 package in 0.84ms
+Installed 1 package in 4ms
+Board size (3-8, default 5): 5
+
+Choose mode:
+1. Local 2-player game
+2. Minimax (default weights)
+3. Minimax (loaded weights)
+4. ML AI (mock NN)
+5. AI vs AI (minimax default)
+Select option (1-5): 4
+Play as (W/B)? W
+loaded ML model from final.pt on device cpu
+Enter moves in a PTN-like format.
+Placement: a1 or Fa1, Sa1, Ca1 etc. Default is flat if no letter.
+Movement: 3a1>12 means pick up 3 from a1, move right, drop 1 then 2.
+You can omit the leading count: a1>12 means pick up 3.
+Type 'quit' to exit.
+   a b c d e
+ 5 . . . . .
+ 4 . . . . .
+ 3 . . . . .
+ 2 . . . . .
+ 1 . . . . .
+
+White: stones=21, caps=1
+Black: stones=21, caps=1
+To move: White
+
+White move: a5
+    a   b   c   d   e 
+ 5 (b)  .   .   .   . 
+ 4  .   .   .   .   . 
+ 3  .   .   .   .   . 
+ 2  .   .   .   .   . 
+ 1  .   .   .   .   . 
+
+White: stones=21, caps=1
+Black: stones=20, caps=1
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 0, 0, 0)
+    a   b   c   d   e 
+ 5 (b)  .   .   .   . 
+ 4  .   .   .   .   . 
+ 3  .   .   .   .   . 
+ 2  .   .   .   .   . 
+ 1 (w)  .   .   .   . 
+
+White: stones=20, caps=1
+Black: stones=20, caps=1
+To move: White
+
+White move: b4
+    a   b   c   d   e 
+ 5 (b)  .   .   .   . 
+ 4  .  (w)  .   .   . 
+ 3  .   .   .   .   . 
+ 2  .   .   .   .   . 
+ 1 (w)  .   .   .   . 
+
+White: stones=19, caps=1
+Black: stones=20, caps=1
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 1, 4, 2)
+    a   b   c   d   e 
+ 5 (b) (K)  .   .   . 
+ 4  .  (w)  .   .   . 
+ 3  .   .   .   .   . 
+ 2  .   .   .   .   . 
+ 1 (w)  .   .   .   . 
+
+White: stones=19, caps=1
+Black: stones=20, caps=0
+To move: White
+
+White move: a3
+    a   b   c   d   e 
+ 5 (b) (K)  .   .   . 
+ 4  .  (w)  .   .   . 
+ 3 (w)  .   .   .   . 
+ 2  .   .   .   .   . 
+ 1 (w)  .   .   .   . 
+
+White: stones=18, caps=1
+Black: stones=20, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 2, 4, 0)
+    a   b   c   d   e 
+ 5 (b) (K) (b)  .   . 
+ 4  .  (w)  .   .   . 
+ 3 (w)  .   .   .   . 
+ 2  .   .   .   .   . 
+ 1 (w)  .   .   .   . 
+
+White: stones=18, caps=1
+Black: stones=19, caps=0
+To move: White
+
+White move: d4
+    a   b   c   d   e 
+ 5 (b) (K) (b)  .   . 
+ 4  .  (w)  .  (w)  . 
+ 3 (w)  .   .   .   . 
+ 2  .   .   .   .   . 
+ 1 (w)  .   .   .   . 
+
+White: stones=17, caps=1
+Black: stones=19, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 3, 4, 0)
+    a   b   c   d   e 
+ 5 (b) (K) (b) (b)  . 
+ 4  .  (w)  .  (w)  . 
+ 3 (w)  .   .   .   . 
+ 2  .   .   .   .   . 
+ 1 (w)  .   .   .   . 
+
+White: stones=17, caps=1
+Black: stones=18, caps=0
+To move: White
+
+White move: e5
+    a   b   c   d   e 
+ 5 (b) (K) (b) (b) (w)
+ 4  .  (w)  .  (w)  . 
+ 3 (w)  .   .   .   . 
+ 2  .   .   .   .   . 
+ 1 (w)  .   .   .   . 
+
+White: stones=16, caps=1
+Black: stones=18, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 2, 3, 0)
+    a   b   c   d   e 
+ 5 (b) (K) (b) (b) (w)
+ 4  .  (w) (b) (w)  . 
+ 3 (w)  .   .   .   . 
+ 2  .   .   .   .   . 
+ 1 (w)  .   .   .   . 
+
+White: stones=16, caps=1
+Black: stones=17, caps=0
+To move: White
+
+White move: a4
+    a   b   c   d   e 
+ 5 (b) (K) (b) (b) (w)
+ 4 (w) (w) (b) (w)  . 
+ 3 (w)  .   .   .   . 
+ 2  .   .   .   .   . 
+ 1 (w)  .   .   .   . 
+
+White: stones=15, caps=1
+Black: stones=17, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 0, 1, 0)
+    a   b   c   d   e 
+ 5 (b) (K) (b) (b) (w)
+ 4 (w) (w) (b) (w)  . 
+ 3 (w)  .   .   .   . 
+ 2 (b)  .   .   .   . 
+ 1 (w)  .   .   .   . 
+
+White: stones=15, caps=1
+Black: stones=16, caps=0
+To move: White
+
+White move: b2
+    a   b   c   d   e 
+ 5 (b) (K) (b) (b) (w)
+ 4 (w) (w) (b) (w)  . 
+ 3 (w)  .   .   .   . 
+ 2 (b) (w)  .   .   . 
+ 1 (w)  .   .   .   . 
+
+White: stones=14, caps=1
+Black: stones=16, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 4, 3, 0)
+    a   b   c   d   e 
+ 5 (b) (K) (b) (b) (w)
+ 4 (w) (w) (b) (w) (b)
+ 3 (w)  .   .   .   . 
+ 2 (b) (w)  .   .   . 
+ 1 (w)  .   .   .   . 
+
+White: stones=14, caps=1
+Black: stones=15, caps=0
+To move: White
+
+White move: d4+1
+    a    b    c    d    e  
+ 5 (b)  (K)  (b)  (bw) (w) 
+ 4 (w)  (w)  (b)   .   (b) 
+ 3 (w)   .    .    .    .  
+ 2 (b)  (w)   .    .    .  
+ 1 (w)   .    .    .    .  
+
+White: stones=14, caps=1
+Black: stones=15, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 3, 3, 0)
+    a    b    c    d    e  
+ 5 (b)  (K)  (b)  (bw) (w) 
+ 4 (w)  (w)  (b)  (b)  (b) 
+ 3 (w)   .    .    .    .  
+ 2 (b)  (w)   .    .    .  
+ 1 (w)   .    .    .    .  
+
+White: stones=14, caps=1
+Black: stones=14, caps=0
+To move: White
+
+Black wins.
+
+┌[andy:andy(~/repos/p)]
+└$ 

@@ -3,7 +3,7 @@ import json
 import os
 
 PREPROC = "preproc"
-CHUNK = 10000  # adjust for speed vs RAM
+CHUNK = 10000
 
 
 def resolve_path(base, p):
@@ -15,16 +15,12 @@ def resolve_path(base, p):
     """
     p = p.replace("/", os.sep).replace("\\", os.sep)
 
-    # Absolute path → return directly
     if os.path.isabs(p):
         return p
 
-    # Case 1: p is something like "preproc/X_0.dat" or "data/sh1/X_0.dat"
-    # → use only the filename, but keep it inside PREPROC
     if os.path.dirname(p):
         return os.path.join(base, os.path.basename(p))
 
-    # Case 2: p is plain filename, just "X_0.dat"
     return os.path.join(base, p)
 
 
@@ -97,11 +93,9 @@ def main():
 
         print("    ✓ Verification passed.")
 
-        # delete old fp16 shard
         print(f"    Deleting old FP16 file: {old_full}")
         os.remove(old_full)
 
-        # update meta.json entry
         shard["X"] = new_name
 
     meta["dtype"] = "float32"

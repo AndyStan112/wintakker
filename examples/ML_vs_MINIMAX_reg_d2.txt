@@ -1,0 +1,703 @@
+Failed to load ML model final.tak: [Errno 2] No such file or directory: 'final.tak'
+Failed to load ML model final.tak: [Errno 2] No such file or directory: 'final.tak'
+   a b c d e
+ 5 . . . . .
+ 4 . . . . .
+ 3 . . . . .
+ 2 . . . . .
+ 1 . . . . .
+
+White: stones=21, caps=1
+Black: stones=21, caps=1
+To move: White
+
+White (AI) thinking...
+AI plays: ('place', 1, 1, 0)
+    a   b   c   d   e 
+ 5  .   .   .   .   . 
+ 4  .   .   .   .   . 
+ 3  .   .   .   .   . 
+ 2  .  (b)  .   .   . 
+ 1  .   .   .   .   . 
+
+White: stones=21, caps=1
+Black: stones=20, caps=1
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 1, 0, 0)
+    a   b   c   d   e 
+ 5  .   .   .   .   . 
+ 4  .   .   .   .   . 
+ 3  .   .   .   .   . 
+ 2  .  (b)  .   .   . 
+ 1  .  (w)  .   .   . 
+
+White: stones=20, caps=1
+Black: stones=20, caps=1
+To move: White
+
+White (AI) thinking...
+AI plays: ('place', 0, 0, 1)
+    a   b   c   d   e 
+ 5  .   .   .   .   . 
+ 4  .   .   .   .   . 
+ 3  .   .   .   .   . 
+ 2  .  (b)  .   .   . 
+ 1 (W) (w)  .   .   . 
+
+White: stones=19, caps=1
+Black: stones=20, caps=1
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 3, 1, 2)
+    a   b   c   d   e 
+ 5  .   .   .   .   . 
+ 4  .   .   .   .   . 
+ 3  .   .   .   .   . 
+ 2  .  (b)  .  (K)  . 
+ 1 (W) (w)  .   .   . 
+
+White: stones=19, caps=1
+Black: stones=20, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('place', 2, 0, 1)
+    a   b   c   d   e 
+ 5  .   .   .   .   . 
+ 4  .   .   .   .   . 
+ 3  .   .   .   .   . 
+ 2  .  (b)  .  (K)  . 
+ 1 (W) (w) (W)  .   . 
+
+White: stones=18, caps=1
+Black: stones=20, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 0, 1, 0)
+    a   b   c   d   e 
+ 5  .   .   .   .   . 
+ 4  .   .   .   .   . 
+ 3  .   .   .   .   . 
+ 2 (b) (b)  .  (K)  . 
+ 1 (W) (w) (W)  .   . 
+
+White: stones=18, caps=1
+Black: stones=19, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('place', 4, 0, 1)
+    a   b   c   d   e 
+ 5  .   .   .   .   . 
+ 4  .   .   .   .   . 
+ 3  .   .   .   .   . 
+ 2 (b) (b)  .  (K)  . 
+ 1 (W) (w) (W)  .  (W)
+
+White: stones=17, caps=1
+Black: stones=19, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 4, 4, 0)
+    a   b   c   d   e 
+ 5  .   .   .   .  (b)
+ 4  .   .   .   .   . 
+ 3  .   .   .   .   . 
+ 2 (b) (b)  .  (K)  . 
+ 1 (W) (w) (W)  .  (W)
+
+White: stones=17, caps=1
+Black: stones=18, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('place', 3, 0, 1)
+    a   b   c   d   e 
+ 5  .   .   .   .  (b)
+ 4  .   .   .   .   . 
+ 3  .   .   .   .   . 
+ 2 (b) (b)  .  (K)  . 
+ 1 (W) (w) (W) (W) (W)
+
+White: stones=16, caps=1
+Black: stones=18, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 0, 4, 0)
+    a   b   c   d   e 
+ 5 (b)  .   .   .  (b)
+ 4  .   .   .   .   . 
+ 3  .   .   .   .   . 
+ 2 (b) (b)  .  (K)  . 
+ 1 (W) (w) (W) (W) (W)
+
+White: stones=16, caps=1
+Black: stones=17, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('place', 4, 2, 1)
+    a   b   c   d   e 
+ 5 (b)  .   .   .  (b)
+ 4  .   .   .   .   . 
+ 3  .   .   .   .  (W)
+ 2 (b) (b)  .  (K)  . 
+ 1 (W) (w) (W) (W) (W)
+
+White: stones=15, caps=1
+Black: stones=17, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('move', 0, 4, 1, 0, 1, [1])
+    a   b   c   d   e 
+ 5  .  (b)  .   .  (b)
+ 4  .   .   .   .   . 
+ 3  .   .   .   .  (W)
+ 2 (b) (b)  .  (K)  . 
+ 1 (W) (w) (W) (W) (W)
+
+White: stones=15, caps=1
+Black: stones=17, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('place', 4, 1, 1)
+    a   b   c   d   e 
+ 5  .  (b)  .   .  (b)
+ 4  .   .   .   .   . 
+ 3  .   .   .   .  (W)
+ 2 (b) (b)  .  (K) (W)
+ 1 (W) (w) (W) (W) (W)
+
+White: stones=14, caps=1
+Black: stones=17, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 2, 1, 0)
+    a   b   c   d   e 
+ 5  .  (b)  .   .  (b)
+ 4  .   .   .   .   . 
+ 3  .   .   .   .  (W)
+ 2 (b) (b) (b) (K) (W)
+ 1 (W) (w) (W) (W) (W)
+
+White: stones=14, caps=1
+Black: stones=16, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('place', 0, 3, 1)
+    a   b   c   d   e 
+ 5  .  (b)  .   .  (b)
+ 4 (W)  .   .   .   . 
+ 3  .   .   .   .  (W)
+ 2 (b) (b) (b) (K) (W)
+ 1 (W) (w) (W) (W) (W)
+
+White: stones=13, caps=1
+Black: stones=16, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 3, 4, 1)
+    a   b   c   d   e 
+ 5  .  (b)  .  (B) (b)
+ 4 (W)  .   .   .   . 
+ 3  .   .   .   .  (W)
+ 2 (b) (b) (b) (K) (W)
+ 1 (W) (w) (W) (W) (W)
+
+White: stones=13, caps=1
+Black: stones=15, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('place', 0, 2, 1)
+    a   b   c   d   e 
+ 5  .  (b)  .  (B) (b)
+ 4 (W)  .   .   .   . 
+ 3 (W)  .   .   .  (W)
+ 2 (b) (b) (b) (K) (W)
+ 1 (W) (w) (W) (W) (W)
+
+White: stones=12, caps=1
+Black: stones=15, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('move', 3, 4, 1, 0, 1, [1])
+    a    b    c    d    e  
+ 5  .   (b)   .    .   (bB)
+ 4 (W)   .    .    .    .  
+ 3 (W)   .    .    .   (W) 
+ 2 (b)  (b)  (b)  (K)  (W) 
+ 1 (W)  (w)  (W)  (W)  (W) 
+
+White: stones=12, caps=1
+Black: stones=15, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('place', 4, 3, 1)
+    a    b    c    d    e  
+ 5  .   (b)   .    .   (bB)
+ 4 (W)   .    .    .   (W) 
+ 3 (W)   .    .    .   (W) 
+ 2 (b)  (b)  (b)  (K)  (W) 
+ 1 (W)  (w)  (W)  (W)  (W) 
+
+White: stones=11, caps=1
+Black: stones=15, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 2, 3, 1)
+    a    b    c    d    e  
+ 5  .   (b)   .    .   (bB)
+ 4 (W)   .   (B)   .   (W) 
+ 3 (W)   .    .    .   (W) 
+ 2 (b)  (b)  (b)  (K)  (W) 
+ 1 (W)  (w)  (W)  (W)  (W) 
+
+White: stones=11, caps=1
+Black: stones=14, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('place', 3, 4, 1)
+    a    b    c    d    e  
+ 5  .   (b)   .   (W)  (bB)
+ 4 (W)   .   (B)   .   (W) 
+ 3 (W)   .    .    .   (W) 
+ 2 (b)  (b)  (b)  (K)  (W) 
+ 1 (W)  (w)  (W)  (W)  (W) 
+
+White: stones=10, caps=1
+Black: stones=14, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('move', 1, 4, 0, -1, 1, [1])
+    a    b    c    d    e  
+ 5  .    .    .   (W)  (bB)
+ 4 (W)  (b)  (B)   .   (W) 
+ 3 (W)   .    .    .   (W) 
+ 2 (b)  (b)  (b)  (K)  (W) 
+ 1 (W)  (w)  (W)  (W)  (W) 
+
+White: stones=10, caps=1
+Black: stones=14, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('place', 0, 4, 1)
+    a    b    c    d    e  
+ 5 (W)   .    .   (W)  (bB)
+ 4 (W)  (b)  (B)   .   (W) 
+ 3 (W)   .    .    .   (W) 
+ 2 (b)  (b)  (b)  (K)  (W) 
+ 1 (W)  (w)  (W)  (W)  (W) 
+
+White: stones=9, caps=1
+Black: stones=14, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 1, 2, 1)
+    a    b    c    d    e  
+ 5 (W)   .    .   (W)  (bB)
+ 4 (W)  (b)  (B)   .   (W) 
+ 3 (W)  (B)   .    .   (W) 
+ 2 (b)  (b)  (b)  (K)  (W) 
+ 1 (W)  (w)  (W)  (W)  (W) 
+
+White: stones=9, caps=1
+Black: stones=13, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('place', 2, 4, 1)
+    a    b    c    d    e  
+ 5 (W)   .   (W)  (W)  (bB)
+ 4 (W)  (b)  (B)   .   (W) 
+ 3 (W)  (B)   .    .   (W) 
+ 2 (b)  (b)  (b)  (K)  (W) 
+ 1 (W)  (w)  (W)  (W)  (W) 
+
+White: stones=8, caps=1
+Black: stones=13, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 3, 2, 0)
+    a    b    c    d    e  
+ 5 (W)   .   (W)  (W)  (bB)
+ 4 (W)  (b)  (B)   .   (W) 
+ 3 (W)  (B)   .   (b)  (W) 
+ 2 (b)  (b)  (b)  (K)  (W) 
+ 1 (W)  (w)  (W)  (W)  (W) 
+
+White: stones=8, caps=1
+Black: stones=12, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('place', 1, 4, 1)
+    a    b    c    d    e  
+ 5 (W)  (W)  (W)  (W)  (bB)
+ 4 (W)  (b)  (B)   .   (W) 
+ 3 (W)  (B)   .   (b)  (W) 
+ 2 (b)  (b)  (b)  (K)  (W) 
+ 1 (W)  (w)  (W)  (W)  (W) 
+
+White: stones=7, caps=1
+Black: stones=12, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 2, 2, 1)
+    a    b    c    d    e  
+ 5 (W)  (W)  (W)  (W)  (bB)
+ 4 (W)  (b)  (B)   .   (W) 
+ 3 (W)  (B)  (B)  (b)  (W) 
+ 2 (b)  (b)  (b)  (K)  (W) 
+ 1 (W)  (w)  (W)  (W)  (W) 
+
+White: stones=7, caps=1
+Black: stones=11, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('move', 0, 2, 0, -1, 1, [1])
+    a    b    c    d    e  
+ 5 (W)  (W)  (W)  (W)  (bB)
+ 4 (W)  (b)  (B)   .   (W) 
+ 3  .   (B)  (B)  (b)  (W) 
+ 2 (bW) (b)  (b)  (K)  (W) 
+ 1 (W)  (w)  (W)  (W)  (W) 
+
+White: stones=7, caps=1
+Black: stones=11, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 0, 2, 0)
+    a    b    c    d    e  
+ 5 (W)  (W)  (W)  (W)  (bB)
+ 4 (W)  (b)  (B)   .   (W) 
+ 3 (b)  (B)  (B)  (b)  (W) 
+ 2 (bW) (b)  (b)  (K)  (W) 
+ 1 (W)  (w)  (W)  (W)  (W) 
+
+White: stones=7, caps=1
+Black: stones=10, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('move', 0, 1, 0, 1, 2, [2])
+     a     b     c     d     e  
+ 5  (W)   (W)   (W)   (W)   (bB)
+ 4  (W)   (b)   (B)    .    (W) 
+ 3 (bbW)  (B)   (B)   (b)   (W) 
+ 2   .    (b)   (b)   (K)   (W) 
+ 1  (W)   (w)   (W)   (W)   (W) 
+
+White: stones=7, caps=1
+Black: stones=10, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('move', 1, 1, 0, -1, 1, [1])
+     a     b     c     d     e  
+ 5  (W)   (W)   (W)   (W)   (bB)
+ 4  (W)   (b)   (B)    .    (W) 
+ 3 (bbW)  (B)   (B)   (b)   (W) 
+ 2   .     .    (b)   (K)   (W) 
+ 1  (W)   (wb)  (W)   (W)   (W) 
+
+White: stones=7, caps=1
+Black: stones=10, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('place', 0, 1, 1)
+     a     b     c     d     e  
+ 5  (W)   (W)   (W)   (W)   (bB)
+ 4  (W)   (b)   (B)    .    (W) 
+ 3 (bbW)  (B)   (B)   (b)   (W) 
+ 2  (W)    .    (b)   (K)   (W) 
+ 1  (W)   (wb)  (W)   (W)   (W) 
+
+White: stones=6, caps=1
+Black: stones=10, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 1, 1, 0)
+     a     b     c     d     e  
+ 5  (W)   (W)   (W)   (W)   (bB)
+ 4  (W)   (b)   (B)    .    (W) 
+ 3 (bbW)  (B)   (B)   (b)   (W) 
+ 2  (W)   (b)   (b)   (K)   (W) 
+ 1  (W)   (wb)  (W)   (W)   (W) 
+
+White: stones=6, caps=1
+Black: stones=9, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('move', 0, 0, 1, 0, 1, [1])
+     a     b     c     d     e  
+ 5  (W)   (W)   (W)   (W)   (bB)
+ 4  (W)   (b)   (B)    .    (W) 
+ 3 (bbW)  (B)   (B)   (b)   (W) 
+ 2  (W)   (b)   (b)   (K)   (W) 
+ 1   .   (wbW)  (W)   (W)   (W) 
+
+White: stones=6, caps=1
+Black: stones=9, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 3, 3, 1)
+     a     b     c     d     e  
+ 5  (W)   (W)   (W)   (W)   (bB)
+ 4  (W)   (b)   (B)   (B)   (W) 
+ 3 (bbW)  (B)   (B)   (b)   (W) 
+ 2  (W)   (b)   (b)   (K)   (W) 
+ 1   .   (wbW)  (W)   (W)   (W) 
+
+White: stones=6, caps=1
+Black: stones=8, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('move', 1, 0, 0, 1, 3, [3])
+     a      b      c      d      e   
+ 5  (W)    (W)    (W)    (W)    (bB) 
+ 4  (W)    (b)    (B)    (B)    (W)  
+ 3 (bbW)   (B)    (B)    (b)    (W)  
+ 2  (W)   (bwbW)  (b)    (K)    (W)  
+ 1   .      .     (W)    (W)    (W)  
+
+White: stones=6, caps=1
+Black: stones=8, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 0, 0, 1)
+     a      b      c      d      e   
+ 5  (W)    (W)    (W)    (W)    (bB) 
+ 4  (W)    (b)    (B)    (B)    (W)  
+ 3 (bbW)   (B)    (B)    (b)    (W)  
+ 2  (W)   (bwbW)  (b)    (K)    (W)  
+ 1  (B)     .     (W)    (W)    (W)  
+
+White: stones=6, caps=1
+Black: stones=7, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('move', 1, 1, 1, 0, 4, [4])
+      a       b       c       d       e   
+ 5   (W)     (W)     (W)     (W)     (bB) 
+ 4   (W)     (b)     (B)     (B)     (W)  
+ 3  (bbW)    (B)     (B)     (b)     (W)  
+ 2   (W)      .    (bbwbW)   (K)     (W)  
+ 1   (B)      .      (W)     (W)     (W)  
+
+White: stones=6, caps=1
+Black: stones=7, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 1, 1, 1)
+      a       b       c       d       e   
+ 5   (W)     (W)     (W)     (W)     (bB) 
+ 4   (W)     (b)     (B)     (B)     (W)  
+ 3  (bbW)    (B)     (B)     (b)     (W)  
+ 2   (W)     (B)   (bbwbW)   (K)     (W)  
+ 1   (B)      .      (W)     (W)     (W)  
+
+White: stones=6, caps=1
+Black: stones=6, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('move', 0, 3, 1, 0, 1, [1])
+      a       b       c       d       e   
+ 5   (W)     (W)     (W)     (W)     (bB) 
+ 4    .      (bW)    (B)     (B)     (W)  
+ 3  (bbW)    (B)     (B)     (b)     (W)  
+ 2   (W)     (B)   (bbwbW)   (K)     (W)  
+ 1   (B)      .      (W)     (W)     (W)  
+
+White: stones=6, caps=1
+Black: stones=6, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 1, 0, 0)
+      a       b       c       d       e   
+ 5   (W)     (W)     (W)     (W)     (bB) 
+ 4    .      (bW)    (B)     (B)     (W)  
+ 3  (bbW)    (B)     (B)     (b)     (W)  
+ 2   (W)     (B)   (bbwbW)   (K)     (W)  
+ 1   (B)     (b)     (W)     (W)     (W)  
+
+White: stones=6, caps=1
+Black: stones=5, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('move', 2, 0, -1, 0, 1, [1])
+      a       b       c       d       e   
+ 5   (W)     (W)     (W)     (W)     (bB) 
+ 4    .      (bW)    (B)     (B)     (W)  
+ 3  (bbW)    (B)     (B)     (b)     (W)  
+ 2   (W)     (B)   (bbwbW)   (K)     (W)  
+ 1   (B)     (bW)     .      (W)     (W)  
+
+White: stones=6, caps=1
+Black: stones=5, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('move', 3, 1, 0, -1, 1, [1])
+      a       b       c       d       e   
+ 5   (W)     (W)     (W)     (W)     (bB) 
+ 4    .      (bW)    (B)     (B)     (W)  
+ 3  (bbW)    (B)     (B)     (b)     (W)  
+ 2   (W)     (B)   (bbwbW)    .      (W)  
+ 1   (B)     (bW)     .      (wK)    (W)  
+
+White: stones=6, caps=1
+Black: stones=5, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('place', 2, 0, 1)
+      a       b       c       d       e   
+ 5   (W)     (W)     (W)     (W)     (bB) 
+ 4    .      (bW)    (B)     (B)     (W)  
+ 3  (bbW)    (B)     (B)     (b)     (W)  
+ 2   (W)     (B)   (bbwbW)    .      (W)  
+ 1   (B)     (bW)    (W)     (wK)    (W)  
+
+White: stones=5, caps=1
+Black: stones=5, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 0, 3, 0)
+      a       b       c       d       e   
+ 5   (W)     (W)     (W)     (W)     (bB) 
+ 4   (b)     (bW)    (B)     (B)     (W)  
+ 3  (bbW)    (B)     (B)     (b)     (W)  
+ 2   (W)     (B)   (bbwbW)    .      (W)  
+ 1   (B)     (bW)    (W)     (wK)    (W)  
+
+White: stones=5, caps=1
+Black: stones=4, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('move', 1, 3, -1, 0, 2, [2])
+      a       b       c       d       e   
+ 5   (W)     (W)     (W)     (W)     (bB) 
+ 4  (bbW)     .      (B)     (B)     (W)  
+ 3  (bbW)    (B)     (B)     (b)     (W)  
+ 2   (W)     (B)   (bbwbW)    .      (W)  
+ 1   (B)     (bW)    (W)     (wK)    (W)  
+
+White: stones=5, caps=1
+Black: stones=4, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 3, 1, 1)
+      a       b       c       d       e   
+ 5   (W)     (W)     (W)     (W)     (bB) 
+ 4  (bbW)     .      (B)     (B)     (W)  
+ 3  (bbW)    (B)     (B)     (b)     (W)  
+ 2   (W)     (B)   (bbwbW)   (B)     (W)  
+ 1   (B)     (bW)    (W)     (wK)    (W)  
+
+White: stones=5, caps=1
+Black: stones=3, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('move', 4, 2, -1, 0, 1, [1])
+      a       b       c       d       e   
+ 5   (W)     (W)     (W)     (W)     (bB) 
+ 4  (bbW)     .      (B)     (B)     (W)  
+ 3  (bbW)    (B)     (B)     (bW)     .   
+ 2   (W)     (B)   (bbwbW)   (B)     (W)  
+ 1   (B)     (bW)    (W)     (wK)    (W)  
+
+White: stones=5, caps=1
+Black: stones=3, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 4, 2, 0)
+      a       b       c       d       e   
+ 5   (W)     (W)     (W)     (W)     (bB) 
+ 4  (bbW)     .      (B)     (B)     (W)  
+ 3  (bbW)    (B)     (B)     (bW)    (b)  
+ 2   (W)     (B)   (bbwbW)   (B)     (W)  
+ 1   (B)     (bW)    (W)     (wK)    (W)  
+
+White: stones=5, caps=1
+Black: stones=2, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('move', 3, 2, 1, 0, 2, [2])
+      a       b       c       d       e   
+ 5   (W)     (W)     (W)     (W)     (bB) 
+ 4  (bbW)     .      (B)     (B)     (W)  
+ 3  (bbW)    (B)     (B)      .     (bbW) 
+ 2   (W)     (B)   (bbwbW)   (B)     (W)  
+ 1   (B)     (bW)    (W)     (wK)    (W)  
+
+White: stones=5, caps=1
+Black: stones=2, caps=0
+To move: Black
+
+Black (AI) thinking...
+AI plays: ('place', 3, 2, 0)
+      a       b       c       d       e   
+ 5   (W)     (W)     (W)     (W)     (bB) 
+ 4  (bbW)     .      (B)     (B)     (W)  
+ 3  (bbW)    (B)     (B)     (b)    (bbW) 
+ 2   (W)     (B)   (bbwbW)   (B)     (W)  
+ 1   (B)     (bW)    (W)     (wK)    (W)  
+
+White: stones=5, caps=1
+Black: stones=1, caps=0
+To move: White
+
+White (AI) thinking...
+AI plays: ('place', 1, 3, 0)
+      a       b       c       d       e   
+ 5   (W)     (W)     (W)     (W)     (bB) 
+ 4  (bbW)    (w)     (B)     (B)     (W)  
+ 3  (bbW)    (B)     (B)     (b)    (bbW) 
+ 2   (W)     (B)   (bbwbW)   (B)     (W)  
+ 1   (B)     (bW)    (W)     (wK)    (W)  
+
+White: stones=4, caps=1
+Black: stones=1, caps=0
+To move: Black
+
+Result: DRAW
