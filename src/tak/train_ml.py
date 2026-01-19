@@ -4,19 +4,13 @@ import sys
 import time
 import os
 import json
+import numpy as np
 import torch
-from torch.utils.data import DataLoader, Subset
+from torch.utils.data import DataLoader, Subset, SequentialSampler
+
+
 from tak.preprocessed_dataset import PreprocessedDataset
 torch.set_num_threads(1)
-
-def collate_fn(batch):
-    xb, yb, gidb, gidxb = zip(*batch)
-    return (
-        torch.stack(xb),
-        torch.stack(yb),
-        torch.stack(gidb),
-        torch.stack(gidxb),
-    )
 
 
 try:
@@ -122,6 +116,9 @@ def main():
     start_epoch = 1
     start_step = 0
 
+    print(torch.cuda.is_available(), device)
+
+
     if args.resume:
         try:
             loaded_epoch, loaded_step, completed_epoch, _ = load_checkpoint(
@@ -172,14 +169,13 @@ def main():
         f"using preprocessed dataset: samples={actual_samples}, batches/epoch={total_batches}"
     )
 
+
     dl = DataLoader(
         ds,
         batch_size=args.batch,
-        num_workers=args.num_workers,
-        pin_memory=torch.cuda.is_available(),
-        persistent_workers=(args.num_workers > 0),
-        prefetch_factor=4,
-        collate_fn=collate_fn,
+        shuffle=False,
+        num_workers=0,
+        pin_memory=True,
     )
 
     stop_requested = {"flag": False}
@@ -200,6 +196,7 @@ def main():
 
     try:
         for epoch in range(start_epoch, args.epochs + 1):
+            print(next(net.parameters()).device)
             total = 0.0
             n = 0
 

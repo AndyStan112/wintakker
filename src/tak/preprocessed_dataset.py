@@ -13,24 +13,30 @@ class PreprocessedDataset(Dataset):
             self.meta = json.load(f)
 
         self.shards = self.meta["shards"]
-        self.dtype = np.float32 if self.meta["dtype"] == "float32" else np.float16
-
-        self._current_shard_idx = None
-        self.X_map = None
-        self.Y_map = None
-        self.G_map = None
-        self.GI_map = None
 
         self.cum = [0]
         for s in self.shards:
             self.cum.append(self.cum[-1] + int(s["size"]))
         self.total = int(self.meta["total_samples"])
 
+        self._current_shard_idx = None
+
+        self.X_tensor = None
+        self.Y_tensor = None
+        self.G_tensor = None
+        self.GI_tensor = None
+
     def __len__(self):
         return self.total
 
     def _resolve(self, name):
         return os.path.join(self.preproc_dir, os.path.basename(name))
+
+    def _loc(self, idx):
+        for si in range(len(self.shards)):
+            if idx < self.cum[si + 1]:
+                return si, idx - self.cum[si]
+        raise IndexError(idx)
 
     def _load_shard(self, shard_idx):
         if self._current_shard_idx == shard_idx:
@@ -39,61 +45,56 @@ class PreprocessedDataset(Dataset):
         s = self.shards[shard_idx]
         size = int(s["size"])
 
-        self.X_map = np.memmap(
+        print(f"[dataset] loading shard {shard_idx} into RAM ({size} samples)")
+
+        X_mm = np.memmap(
             self._resolve(s["X"]),
-            dtype=self.dtype,
+            dtype=np.float32,
             mode="r",
             shape=(size, 10, 8, 8),
         )
-
-        self.Y_map = np.memmap(
+        Y_mm = np.memmap(
             self._resolve(s["Y"]),
             dtype=np.float32,
             mode="r",
             shape=(size,),
         )
-
-        self.G_map = np.memmap(
+        G_mm = np.memmap(
             self._resolve(s["G"]),
             dtype=np.int32,
             mode="r",
             shape=(size,),
         )
-
-        self.GI_map = np.memmap(
+        GI_mm = np.memmap(
             self._resolve(s["GI"]),
             dtype=np.int16,
             mode="r",
             shape=(size,),
         )
 
+        X_np = np.array(X_mm, dtype=np.float32)
+        Y_np = np.array(Y_mm, dtype=np.float32)
+        G_np = np.array(G_mm, dtype=np.int32)
+        GI_np = np.array(GI_mm, dtype=np.int16)
+
+
+        self.X_tensor = torch.from_numpy(X_np)
+        self.Y_tensor = torch.from_numpy(Y_np).unsqueeze(1)
+        self.G_tensor = torch.from_numpy(G_np)
+        self.GI_tensor = torch.from_numpy(GI_np)
+
         self._current_shard_idx = shard_idx
 
-    def _loc(self, idx):
-        for si in range(len(self.shards)):
-            if idx < self.cum[si + 1]:
-                return si, idx - self.cum[si]
-        raise IndexError(idx)
-
     def __getitem__(self, idx):
-        si, local = self._loc(int(idx))
-        self._load_shard(si)
+        idx = int(idx)
+        shard_idx, local = self._loc(idx)
 
-        # numpy memmap slices
-        x_np = self.X_map[local]     # shape: (10, 8, 8)
-        y_val = float(self.Y_map[local])
-        gid = int(self.G_map[local])
-        gidx = int(self.GI_map[local])
-
-        # Convert safely to torch tensor (2.5 KB copy, super fast)
-        xt = torch.tensor(x_np, dtype=torch.float32)
-
-        # Keep y as (1,) so collate produces (B,1)
-        yt = torch.tensor([y_val], dtype=torch.float32)
+        if self._current_shard_idx != shard_idx:
+            self._load_shard(shard_idx)
 
         return (
-            xt,
-            yt,
-            torch.tensor(gid, dtype=torch.int32),
-            torch.tensor(gidx, dtype=torch.int32),
+            self.X_tensor[local],
+            self.Y_tensor[local],
+            self.G_tensor[local],
+            self.GI_tensor[local],
         )
